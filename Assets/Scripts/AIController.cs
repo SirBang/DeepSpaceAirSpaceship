@@ -29,6 +29,7 @@ public class AIController : MonoBehaviour, IControllerInput, IBehaviourAI
 
     GameObject target = null; // The current target object
 
+    public bool movement_state = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -60,14 +61,18 @@ public class AIController : MonoBehaviour, IControllerInput, IBehaviourAI
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+            movement_state = !movement_state;
         // Evaluate the root behavior tree node
-        rootAI.Evaluate();
+        if(movement_state)
+        {  
+            rootAI.Evaluate();
+        }
     }
 
     // Set the target position for the AI
     public Vector3 SetTargetPosition(Vector3 targetPosition)
     {
-       
         myTargetPosition = targetPosition;
         return myTargetPosition;
 

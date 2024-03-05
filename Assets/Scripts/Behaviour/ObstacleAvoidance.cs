@@ -22,20 +22,24 @@ public class ObstacleAvoidance : BTNode
     {
         // Get the current transform of the AI agent.
         agentTransform = myAI.GetAgentTransform();
-
-        // Define ray directions to check for obstacles.
         Vector3[] rayDirections =
         {
-            (agentTransform.forward + agentTransform.right).normalized,
-            (agentTransform.forward - agentTransform.right).normalized,
-            (agentTransform.forward + agentTransform.up).normalized,
-            (agentTransform.forward - agentTransform.up).normalized,
-            (agentTransform.right).normalized,
-            (-agentTransform.right).normalized,
-            (agentTransform.up).normalized,
-            (-agentTransform.up).normalized,
+            agentTransform.forward,
+            Helper.GetDirectionFromAngleInDegrees(10f, agentTransform.forward, agentTransform.right),
+            Helper.GetDirectionFromAngleInDegrees(-10f, agentTransform.forward, agentTransform.right),
+            Helper.GetDirectionFromAngleInDegrees(10f, agentTransform.forward, agentTransform.up),
+            Helper.GetDirectionFromAngleInDegrees(-10f, agentTransform.forward, agentTransform.up),
+            (agentTransform.forward + agentTransform.right). normalized,
+            (agentTransform.forward - agentTransform.right). normalized,
+            (agentTransform.forward + agentTransform.up). normalized,
+            (agentTransform.forward - agentTransform.up). normalized,
+            (agentTransform.right). normalized,
+            (-agentTransform.right). normalized,
+            (agentTransform.up). normalized,
+            (-agentTransform.up). normalized,
         };
 
+        DrawRays(rayDirections);
         // Iterate through each ray direction to check for obstacles.
         for (int i = 0; i < rayDirections.Length; i++)
         {
@@ -73,4 +77,13 @@ public class ObstacleAvoidance : BTNode
 
         return BTNodeState.SUCCESS;
     }
+
+    private void DrawRays (Vector3[] rayDirections)
+    {
+        foreach (Vector3 dir in rayDirections)
+        {
+            Debug.DrawRay(agentTransform.position, dir * avoidDistance, Color.blue);
+        }
+    }
+
 }
