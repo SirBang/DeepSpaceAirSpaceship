@@ -17,7 +17,7 @@ public class GenerateAsteroidField : MonoBehaviour
             Transform asteroidInstance = Instantiate(asteriodPrefab, Random.insideUnitSphere * fieldRadius, Quaternion.identity);
 
             // Generate a random size
-            float size = Random.Range(0.5f, 3.0f); // Adjust min and max size as needed
+            float size = Random.Range(0.5f, 2.0f); // Adjust min and max size as needed
             asteroidInstance.localScale = new Vector3(size, size, size); // Set the random size
         }
     }
