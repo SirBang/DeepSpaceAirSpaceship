@@ -25,8 +25,7 @@ public class AIController : MonoBehaviour, IControllerInput, IBehaviourAI
     bool avoiding = false; // Flag to indicate if the AI is currently avoiding an obstacle
     public float avoidDistance = 200f; // Distance to check for obstacles to avoid
     Vector3 temporaryTarget; // Temporary target position when avoiding obstacles
-    Vector3 savedTargetPosition; // Original target position before avoiding
-
+    Vector3 savedTargetPosition; // Original target position before av
     GameObject target = null; // The current target object
 
     public bool movement_state = true;
