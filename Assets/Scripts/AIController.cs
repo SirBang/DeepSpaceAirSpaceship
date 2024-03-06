@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class AIController : MonoBehaviour, IControllerInput, IBehaviourAI
 {
-    // Events for AI inputs
+    // Events for AI inputsdddd
     public event InputEventFloat ForwardEvent;
     public event InputEventFloat YawEvent;
     public event InputEventFloat PitchEvent;
