@@ -26,20 +26,17 @@ public class AIController : MonoBehaviour, IControllerInput, IBehaviourAI
     public float avoidDistance = 200f; // Distance to check for obstacles to avoid
     Vector3 temporaryTarget; // Temporary target position when av
     Vector3 savedTargetPosition; // Original target positi
-
     GameObject target = null; // The current target object
 
     public bool movement_state = true;
-    // Start is called before the first frame update
+    // Start is called before the first fram
     void Start()
     {
-        // Initialize behavior sequences
+        // Initializ
         CheckArrivalSequence = new Sequence(new List<BTNode>
         {
             new CheckArrivalTask(this),
             new FindWanderPointTask (this, 600f),
-            //  new CheckArrivalTask(this),
-            // new FindWanderPointTask (this, 600f),
         });
 
         MoveSequence = new Sequence(new List<BTNode>
