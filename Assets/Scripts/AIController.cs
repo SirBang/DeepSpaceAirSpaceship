@@ -38,8 +38,6 @@ public class AIController : MonoBehaviour, IControllerInput, IBehaviourAI
         {
             new CheckArrivalTask(this),
             new FindWanderPointTask (this, 600f),
-            //  new CheckArrivalTask(this),
-            // new FindWanderPointTask (this, 600f),
         });
 
         MoveSequence = new Sequence(new List<BTNode>
