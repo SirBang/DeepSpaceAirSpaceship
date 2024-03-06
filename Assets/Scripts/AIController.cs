@@ -30,7 +30,7 @@ public class AIController : MonoBehaviour, IControllerInput, IBehaviourAI
     GameObject target = null; // The current target object
 
     public bool movement_state = true;
-    // Start is called before the first frame update
+    // Start is called before the first fram
     void Start()
     {
         // Initializ
