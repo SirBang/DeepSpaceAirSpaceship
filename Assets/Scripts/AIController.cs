@@ -43,6 +43,8 @@ public class AIController : MonoBehaviour, IControllerInput, IBehaviourAI
         {
             new ObstacleAvoidance(this, avoidDistance, TurnEvent),
             new MoveToTargetTask(this, 300f, ForwardEvent),
+            //  new ObstacleAvoidance(this, avoidDistance, TurnEvent),
+            // new MoveToTargetTask(this, 300f, ForwardEvent),
         });
 
         // Root behavior selector
