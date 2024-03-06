@@ -33,7 +33,7 @@ public class AIController : MonoBehaviour, IControllerInput, IBehaviourAI
     // Start is called before the first frame update
     void Start()
     {
-        // Initialize behavior sequences
+        // Initializ
         CheckArrivalSequence = new Sequence(new List<BTNode>
         {
             new CheckArrivalTask(this),
