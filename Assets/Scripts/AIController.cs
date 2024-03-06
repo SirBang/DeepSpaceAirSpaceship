@@ -22,10 +22,10 @@ public class AIController : MonoBehaviour, IControllerInput, IBehaviourAI
     public Selector rootAI;
     public Sequence CheckArrivalSequence;
     public Sequence MoveSequence;
-    bool avoiding = false; // Flag to indicate if the AI is currently avoiding an obstacle
+    bool avoiding = false; // Flag to indicate if the AI is currently
     public float avoidDistance = 200f; // Distance to check for obstacles to avoid
-    Vector3 temporaryTarget; // Temporary target position when avoiding obstacles
-    Vector3 savedTargetPosition; // Original target position before av
+    Vector3 temporaryTarget; // Temporary target position when av
+    Vector3 savedTargetPosition; // Original target positi
     GameObject target = null; // The current target object
 
     public bool movement_state = true;
